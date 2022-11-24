@@ -21,8 +21,8 @@
  */
 group = "com.github.fge";
 version = "0.1.5-SNAPSHOT";
-sourceCompatibility = "1.6";
-targetCompatibility = "1.6"; // defaults to sourceCompatibility
+sourceCompatibility = "1.7";
+targetCompatibility = "1.7"; // defaults to sourceCompatibility
 
 project.ext {
     description = "Avro Schema to JSON Schema conversion and back";
@@ -32,20 +32,20 @@ project.ext {
  * List of dependencies
  */
 dependencies {
-    compile(group: "com.github.fge", name: "json-schema-validator",
-        version: "2.2.0");
-    compile(group: "org.apache.avro", name: "avro", version: "1.7.6") {
+    implementation(group: "com.github.fge", name: "json-schema-validator",
+            version: "2.2.0");
+    implementation(group: "org.apache.avro", name: "avro", version: "1.7.6") {
         exclude(group: "org.slf4j", module: "slf4j-api");
         exclude(group: "org.apache.commons", module: "commons-compress");
         exclude(group: "com.thoughtworks.paranamer", module: "paranamer");
         exclude(group: "org.xerial.snappy", module: "snappy-java");
     }
-    testCompile(group: "org.testng", name: "testng", version: "6.8.7") {
+    testImplementation(group: "org.testng", name: "testng", version: "6.8.7") {
         exclude(group: "junit", module: "junit");
         exclude(group: "org.beanshell", module: "bsh");
         exclude(group: "org.yaml", module: "snakeyaml");
     };
-    testCompile(group: "org.mockito", name: "mockito-core", version: "1.9.5");
+    testImplementation(group: "org.mockito", name: "mockito-core", version: "1.9.5");
 }
 
 javadoc.options.links("http://docs.oracle.com/javase/6/docs/api/");

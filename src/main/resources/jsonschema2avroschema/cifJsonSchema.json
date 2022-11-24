@@ -1,0 +1,923 @@
+
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "http://example.com/example.json",
+  "title": "Root Schema",
+  "type": "object",
+  "required": [
+    "criticalPath",
+    "status",
+    "actionedBy",
+    "inductionMetadata",
+    "product",
+    "event"
+  ],
+  "properties": {
+    "criticalPath": {
+      "title": "The criticalPath Schema",
+      "type": "object",
+      "required": [
+        "estimatedLaunch",
+        "milestones"
+      ],
+      "properties": {
+        "estimatedLaunch": {
+          "title": "The estimatedLaunch Schema",
+          "type": "object",
+          "required": [
+            "date",
+            "week",
+            "year"
+          ],
+          "properties": {
+            "date": {
+              "title": "The date Schema",
+              "type": "string"
+            },
+            "week": {
+              "title": "The week Schema",
+              "type": "string"
+            },
+            "year": {
+              "title": "The year Schema",
+              "type": "string"
+            }
+          }
+        },
+        "launch": {
+          "title": "The launch Schema",
+          "type": "object",
+          "required": [
+            "date",
+            "week",
+            "year"
+          ],
+          "properties": {
+            "date": {
+              "title": "The date Schema",
+              "type": "string"
+            },
+            "week": {
+              "title": "The week Schema",
+              "type": "string"
+            },
+            "year": {
+              "title": "The year Schema",
+              "type": "string"
+            }
+          }
+        },
+        "milestones": {
+          "title": "The milestones Schema",
+          "type": "array",
+          "items": {
+            "title": "A Schema",
+            "type": "object",
+            "required": [
+              "value",
+              "milestoneKey",
+              "status",
+              "milestoneNo",
+              "milestone_owner",
+              "milestone_deadline"
+            ],
+            "properties": {
+              "value": {
+                "title": "The value Schema",
+                "type": "string"
+              },
+              "milestoneKey": {
+                "title": "The milestoneKey Schema",
+                "type": "string"
+              },
+              "status": {
+                "title": "The status Schema",
+                "type": "object",
+                "required": [
+                  "value",
+                  "timestamp"
+                ],
+                "properties": {
+                  "value": {
+                    "title": "The value Schema",
+                    "type": "string"
+                  },
+                  "timestamp": {
+                    "title": "The timestamp Schema",
+                    "type": "string"
+                  }
+                }
+              },
+              "milestoneNo": {
+                "title": "The milestoneNo Schema",
+                "type": "string"
+              },
+              "milestone_owner": {
+                "title": "The milestone_owner Schema",
+                "type": "object",
+                "required": [
+                  "value"
+                ],
+                "properties": {
+                  "value": {
+                    "title": "The value Schema",
+                    "type": "string"
+                  }
+                }
+              },
+              "milestone_deadline": {
+                "title": "The milestone_deadline Schema",
+                "type": "object",
+                "required": [
+                  "calendar"
+                ],
+                "properties": {
+                  "calendar": {
+                    "title": "The calendar Schema",
+                    "type": "object",
+                    "required": [
+                      "date",
+                      "week",
+                      "year"
+                    ],
+                    "properties": {
+                      "date": {
+                        "title": "The date Schema",
+                        "type": "string"
+                      },
+                      "week": {
+                        "title": "The week Schema",
+                        "type": "string"
+                      },
+                      "year": {
+                        "title": "The year Schema",
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "status": {
+      "title": "The status Schema",
+      "type": "object",
+      "required": [
+        "supplierComplete",
+        "buyerComplete",
+        "dataOperatorComplete",
+        "awaitingBarcode",
+        "artworkUploaded",
+        "status",
+        "isRejected"
+      ],
+      "properties": {
+        "supplierComplete": {
+          "title": "The supplierComplete Schema",
+          "type": "boolean"
+        },
+        "buyerComplete": {
+          "title": "The buyerComplete Schema",
+          "type": "boolean"
+        },
+        "dataOperatorComplete": {
+          "title": "The dataOperatorComplete Schema",
+          "type": "boolean"
+        },
+        "awaitingBarcode": {
+          "title": "The awaitingBarcode Schema",
+          "type": "boolean"
+        },
+        "artworkUploaded": {
+          "title": "The artworkUploaded Schema",
+          "type": "boolean"
+        },
+        "status": {
+          "title": "The status Schema",
+          "type": "string"
+        },
+        "isRejected": {
+          "title": "The isRejected Schema",
+          "type": "boolean"
+        }
+      }
+    },
+    "actionedBy": {
+      "title": "The actionedBy Schema",
+      "type": "string"
+    },
+    "audit": {
+      "title": "The audit Schema",
+      "type": "array",
+      "items": {
+        "title": "A Schema",
+        "type": "object",
+        "required": [
+          "action",
+          "description",
+          "updatedBy",
+          "change"
+        ],
+        "properties": {
+          "action": {
+            "title": "The action Schema",
+            "type": "string"
+          },
+          "description": {
+            "title": "The description Schema",
+            "type": "object",
+            "required": [
+              "code"
+            ],
+            "properties": {
+              "code": {
+                "title": "The code Schema",
+                "type": "string"
+              }
+            }
+          },
+          "updatedBy": {
+            "title": "The updatedBy Schema",
+            "type": "object",
+            "required": [
+              "id",
+              "role"
+            ],
+            "properties": {
+              "id": {
+                "title": "The id Schema",
+                "type": "string"
+              },
+              "role": {
+                "title": "The role Schema",
+                "type": "string"
+              }
+            }
+          },
+          "change": {
+            "title": "The change Schema",
+            "type": "object",
+            "required": [
+              "changeId",
+              "fieldChanged",
+              "attributesChange"
+            ],
+            "properties": {
+              "changeId": {
+                "title": "The changeId Schema",
+                "type": "string"
+              },
+              "fieldChanged": {
+                "title": "The fieldChanged Schema",
+                "type": "integer"
+              },
+              "attributesChange": {
+                "title": "The attributesChange Schema",
+                "type": "array",
+                "items": {
+                  "title": "A Schema",
+                  "type": "object",
+                  "required": [
+                    "attrGroup",
+                    "attributes"
+                  ],
+                  "properties": {
+                    "attrGroup": {
+                      "title": "The attrGroup Schema",
+                      "type": "string"
+                    },
+                    "attributes": {
+                      "title": "The attributes Schema",
+                      "type": "array",
+                      "items": {
+                        "title": "A Schema",
+                        "type": "object",
+                        "required": [
+                          "name",
+                          "values"
+                        ],
+                        "properties": {
+                          "name": {
+                            "title": "The name Schema",
+                            "type": "string"
+                          },
+                          "values": {
+                            "title": "The values Schema",
+                            "type": "object",
+                            "required": [
+                              "new"
+                            ],
+                            "properties": {
+                              "new": {
+                                "title": "The new Schema",
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "uniqueKeys": {
+                            "title": "The uniqueKeys Schema",
+                            "type": "object",
+                            "required": [
+                              "countryCode"
+                            ],
+                            "properties": {
+                              "countryCode": {
+                                "title": "The countryCode Schema",
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "lang": {
+                            "title": "The lang Schema",
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "inductionMetadata": {
+      "title": "The inductionMetadata Schema",
+      "type": "object",
+      "required": [
+        "inductionId",
+        "inductionType",
+        "hasMigratedParent",
+        "active",
+        "inductionUpdatedAt"
+      ],
+      "properties": {
+        "inductionId": {
+          "title": "The inductionId Schema",
+          "type": "string"
+        },
+        "inductionType": {
+          "title": "The inductionType Schema",
+          "type": "string"
+        },
+        "hasMigratedParent": {
+          "title": "The hasMigratedParent Schema",
+          "type": "boolean"
+        },
+        "active": {
+          "title": "The active Schema",
+          "type": "boolean"
+        },
+        "inductionUpdatedAt": {
+          "title": "The inductionUpdatedAt Schema",
+          "type": "string"
+        }
+      }
+    },
+    "product": {
+      "title": "The product Schema",
+      "type": "object",
+      "required": [
+        "isTelecomProduct",
+        "catalogue",
+        "identifiers",
+        "gtinInfo",
+        "attributeInfo"
+      ],
+      "properties": {
+        "isTelecomProduct": {
+          "title": "The isTelecomProduct Schema",
+          "type": "boolean"
+        },
+        "catalogue": {
+          "title": "The catalogue Schema",
+          "type": "object",
+          "required": [],
+          "properties": {
+            "number": {
+              "title": "The number Schema",
+              "type": "string"
+            },
+            "name": {
+              "title": "The name Schema",
+              "type": "string"
+            },
+            "uuid": {
+              "title": "The uuid Schema",
+              "type": "string"
+            }
+          }
+        },
+        "identifiers": {
+          "title": "The identifiers Schema",
+          "type": "object",
+          "required": [
+            "baseId",
+            "countrySpecific"
+          ],
+          "properties": {
+            "baseId": {
+              "title": "The baseId Schema",
+              "type": "string"
+            },
+            "promotionalVariantId": {
+              "title": "The promotionalVariantId Schema",
+              "type": "string"
+            },
+            "countrySpecific": {
+              "title": "The countrySpecific Schema",
+              "type": "array",
+              "items": {
+                "title": "A Schema",
+                "type": "object",
+                "required": [
+                  "tpna",
+                  "tpnb",
+                  "tpnc",
+                  "legacyItemId",
+                  "country"
+                ],
+                "properties": {
+                  "tpna": {
+                    "title": "The tpna Schema",
+                    "type": "string"
+                  },
+                  "tpnb": {
+                    "title": "The tpnb Schema",
+                    "type": "string"
+                  },
+                  "tpnc": {
+                    "title": "The tpnc Schema",
+                    "type": "string"
+                  },
+                  "legacyItemId": {
+                    "title": "The legacyItemId Schema",
+                    "type": "string"
+                  },
+                  "country": {
+                    "title": "The country Schema",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "gtinInfo": {
+          "title": "The gtinInfo Schema",
+          "type": "array",
+          "items": {
+            "title": "A Schema",
+            "type": "object",
+            "required": [
+              "productId",
+              "attributes"
+            ],
+            "properties": {
+              "gtinType": {
+                "title": "The gtinType Schema",
+                "type": "string"
+              },
+              "gtin": {
+                "title": "The gtin Schema",
+                "type": "string"
+              },
+              "gtinScanned": {
+                "title": "The gtinScanned Schema",
+                "type": "boolean"
+              },
+              "gtinStart": {
+                "title": "The gtinStart Schema",
+                "type": "string"
+              },
+              "cuvId": {
+                "title": "The cuvId Schema",
+                "type": "string"
+              },
+              "legacyItemId": {
+                "title": "The legacyItemId Schema",
+                "type": "string"
+              },
+              "productId": {
+                "title": "The productId Schema",
+                "type": "string"
+              },
+              "parentId": {
+                "title": "The parentId Schema",
+                "type": "string"
+              },
+              "attributes": {
+                "title": "The attributes Schema",
+                "type": "array",
+                "items": {
+                  "title": "A Schema",
+                  "type": "object",
+                  "required": [],
+                  "properties": {
+                    "attributeGroups": {
+                      "title": "The attributeGroups Schema",
+                      "type": "array",
+                      "items": {
+                        "title": "A Schema",
+                        "type": "object",
+                        "required": [],
+                        "properties": {
+                          "name": {
+                            "title": "The name Schema",
+                            "type": "string"
+                          },
+                          "attributes": {
+                            "title": "The attributes Schema",
+                            "type": "array",
+                            "items": {
+                              "title": "A Schema",
+                              "type": "object",
+                              "required": [
+                                "name",
+                                "values"
+                              ],
+                              "properties": {
+                                "name": {
+                                  "title": "The name Schema",
+                                  "type": "string"
+                                },
+                                "values": {
+                                  "title": "The values Schema",
+                                  "type": "array",
+                                  "items": {
+                                    "title": "A Schema",
+                                    "type": "object",
+                                    "required": [
+                                      "value",
+                                      "lang"
+                                    ],
+                                    "properties": {
+                                      "value": {
+                                        "title": "The value Schema",
+                                        "type": "string"
+                                      },
+                                      "lang": {
+                                        "title": "The lang Schema",
+                                        "type": "null"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "country": {
+                      "title": "The country Schema",
+                      "type": "string"
+                    },
+                    "commercialHierarchy": {
+                      "title": "The commercialHierarchy Schema",
+                      "type": "object",
+                      "required": [
+                        "code"
+                      ],
+                      "properties": {
+                        "subclassCode": {
+                          "title": "The subclassCode Schema",
+                          "type": "string"
+                        },
+                        "subclassName": {
+                          "title": "The subclassName Schema",
+                          "type": "string"
+                        },
+                        "uuid": {
+                          "title": "The uuid Schema",
+                          "type": "string"
+                        },
+                        "divisionCode": {
+                          "title": "The divisionCode Schema",
+                          "type": "string"
+                        },
+                        "divisionNumber": {
+                          "title": "The divisionNumber Schema",
+                          "type": "integer"
+                        },
+                        "divisionName": {
+                          "title": "The divisionName Schema",
+                          "type": "string"
+                        },
+                        "departmentCode": {
+                          "title": "The departmentCode Schema",
+                          "type": "string"
+                        },
+                        "departmentNumber": {
+                          "title": "The departmentNumber Schema",
+                          "type": "integer"
+                        },
+                        "departmentName": {
+                          "title": "The departmentName Schema",
+                          "type": "string"
+                        },
+                        "sectionCode": {
+                          "title": "The sectionCode Schema",
+                          "type": "string"
+                        },
+                        "sectionNumber": {
+                          "title": "The sectionNumber Schema",
+                          "type": "integer"
+                        },
+                        "sectionName": {
+                          "title": "The sectionName Schema",
+                          "type": "string"
+                        },
+                        "classCode": {
+                          "title": "The classCode Schema",
+                          "type": "string"
+                        },
+                        "classNumber": {
+                          "title": "The classNumber Schema",
+                          "type": "integer"
+                        },
+                        "className": {
+                          "title": "The className Schema",
+                          "type": "string"
+                        },
+                        "code": {
+                          "title": "The code Schema",
+                          "type": "string"
+                        },
+                        "name": {
+                          "title": "The name Schema",
+                          "type": "string"
+                        },
+                        "subclassNumber": {
+                          "title": "The subclassNumber Schema",
+                          "type": "integer"
+                        },
+                        "country": {
+                          "title": "The country Schema",
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "attributeInfo": {
+          "title": "The attributeInfo Schema",
+          "type": "array",
+          "items": {
+            "title": "A Schema",
+            "type": "object",
+            "required": [
+              "attributeGroups",
+              "country"
+            ],
+            "properties": {
+              "attributeGroups": {
+                "title": "The attributeGroups Schema",
+                "type": "array",
+                "items": {
+                  "title": "A Schema",
+                  "type": "object",
+                  "required": [
+                    "name"
+                  ],
+                  "properties": {
+                    "name": {
+                      "title": "The name Schema",
+                      "type": "string"
+                    },
+                    "attributes": {
+                      "title": "The attributes Schema",
+                      "type": "array",
+                      "items": {
+                        "title": "A Schema",
+                        "type": "object",
+                        "required": [
+                          "name",
+                          "values"
+                        ],
+                        "properties": {
+                          "name": {
+                            "title": "The name Schema",
+                            "type": "string"
+                          },
+                          "area": {
+                            "title": "The area Schema",
+                            "type": "string"
+                          },
+                          "values": {
+                            "title": "The values Schema",
+                            "type": "array",
+                            "items": {
+                              "title": "A Schema",
+                              "type": "object",
+                              "required": [
+                                "value",
+                                "lang"
+                              ],
+                              "properties": {
+                                "value": {
+                                  "title": "The value Schema",
+                                  "type": "string"
+                                },
+                                "lang": {
+                                  "title": "The lang Schema",
+                                  "type": [
+                                    "string",
+                                    "null"
+                                  ]
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "multiRowAttributes": {
+                      "title": "The multiRowAttributes Schema",
+                      "type": "array",
+                      "items": {
+                        "title": "A Schema",
+                        "type": "object",
+                        "required": [
+                          "attributes"
+                        ],
+                        "properties": {
+                          "attributes": {
+                            "title": "The attributes Schema",
+                            "type": "array",
+                            "items": {
+                              "title": "A Schema",
+                              "type": "object",
+                              "required": [
+                                "name",
+                                "values"
+                              ],
+                              "properties": {
+                                "name": {
+                                  "title": "The name Schema",
+                                  "type": "string"
+                                },
+                                "values": {
+                                  "title": "The values Schema",
+                                  "type": "array",
+                                  "items": {
+                                    "title": "A Schema",
+                                    "type": "object",
+                                    "required": [
+                                      "value",
+                                      "lang"
+                                    ],
+                                    "properties": {
+                                      "value": {
+                                        "title": "The value Schema",
+                                        "type": "string"
+                                      },
+                                      "lang": {
+                                        "title": "The lang Schema",
+                                        "type": "null"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "country": {
+                "title": "The country Schema",
+                "type": "string"
+              },
+              "commercialHierarchy": {
+                "title": "The commercialHierarchy Schema",
+                "type": "object",
+                "required": [
+                  "code"
+                ],
+                "properties": {
+                  "subclassCode": {
+                    "title": "The subclassCode Schema",
+                    "type": "string"
+                  },
+                  "subclassName": {
+                    "title": "The subclassName Schema",
+                    "type": "string"
+                  },
+                  "uuid": {
+                    "title": "The uuid Schema",
+                    "type": "string"
+                  },
+                  "divisionCode": {
+                    "title": "The divisionCode Schema",
+                    "type": "string"
+                  },
+                  "divisionNumber": {
+                    "title": "The divisionNumber Schema",
+                    "type": "integer"
+                  },
+                  "divisionName": {
+                    "title": "The divisionName Schema",
+                    "type": "string"
+                  },
+                  "departmentCode": {
+                    "title": "The departmentCode Schema",
+                    "type": "string"
+                  },
+                  "departmentNumber": {
+                    "title": "The departmentNumber Schema",
+                    "type": "integer"
+                  },
+                  "departmentName": {
+                    "title": "The departmentName Schema",
+                    "type": "string"
+                  },
+                  "sectionCode": {
+                    "title": "The sectionCode Schema",
+                    "type": "string"
+                  },
+                  "sectionNumber": {
+                    "title": "The sectionNumber Schema",
+                    "type": "integer"
+                  },
+                  "sectionName": {
+                    "title": "The sectionName Schema",
+                    "type": "string"
+                  },
+                  "classCode": {
+                    "title": "The classCode Schema",
+                    "type": "string"
+                  },
+                  "classNumber": {
+                    "title": "The classNumber Schema",
+                    "type": "integer"
+                  },
+                  "className": {
+                    "title": "The className Schema",
+                    "type": "string"
+                  },
+                  "code": {
+                    "title": "The code Schema",
+                    "type": "string"
+                  },
+                  "name": {
+                    "title": "The name Schema",
+                    "type": "string"
+                  },
+                  "subclassNumber": {
+                    "title": "The subclassNumber Schema",
+                    "type": "integer"
+                  },
+                  "country": {
+                    "title": "The country Schema",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "event": {
+      "title": "The event Schema",
+      "type": "object",
+      "required": [
+        "clientId",
+        "timestamp",
+        "type",
+        "id"
+      ],
+      "properties": {
+        "clientId": {
+          "title": "The clientId Schema",
+          "type": "string"
+        },
+        "timestamp": {
+          "title": "The timestamp Schema",
+          "type": "string"
+        },
+        "type": {
+          "title": "The type Schema",
+          "type": "string"
+        },
+        "id": {
+          "title": "The id Schema",
+          "type": "string"
+        }
+      }
+    }
+  }
+}
+

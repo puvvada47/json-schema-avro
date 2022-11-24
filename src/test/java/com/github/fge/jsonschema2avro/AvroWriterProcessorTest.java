@@ -78,11 +78,16 @@ public abstract class AvroWriterProcessorTest
         final JsonNode avro)
         throws ProcessingException
     {
+        System.out.println("json input data: "+schema);
+        System.out.println("avro input data: "+avro);
         final SchemaTree tree = new CanonicalSchemaTree(schema);
         final ValueHolder<SchemaTree> input = ValueHolder.hold("schema", tree);
         final Schema expected = new Schema.Parser().parse(avro.toString());
 
+
         final Schema actual = processor.process(report, input).getValue();
+        System.out.println("expected avro schema: "+ expected);
+        System.out.println("actual avro schema: "+ actual);
         assertEquals(expected, actual);
     }
 }
