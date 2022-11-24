@@ -1,6 +1,6 @@
 **How to run the gradle **
 
-Prerequisites
+
       
 1.run the gradle project 
                  
